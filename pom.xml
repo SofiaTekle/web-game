@@ -74,6 +74,13 @@
 
     </dependencies>
 
+    <repositories>
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/SofiaTekle/textformatter</url>
+        </repository>
+    </repositories>
+
     <build>
         <plugins>
             <plugin>
