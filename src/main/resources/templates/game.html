@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Äventyrsspel</title>
+    <link rel="stylesheet" th:href="@{style.css}">
+</head>
+<body>
+<h2>Äventyrsspel</h2>
+<p>Nuvarande plats: <span th:text="${gameState.currentPlace.description}"></span></p>
+
+<form th:action="@{/game}" th:object="${moveForm}" method="post">
+
+    <!--- Command -->
+
+    <div>
+
+        <label>Ditt kommando:</label>
+        <input type="text" th:field="*{command}"/>
+
+
+        <p th:if="${#fields.hasErrors('command')}"
+           th:errors="*{command}"
+           style="color:red">
+        </p>
+    </div>
+
+    <div>
+
+        <label>Email:</label>
+        <input type="text" th:field="*{email}"/>
+
+
+        <p th:if="${#fields.hasErrors('email')}"
+           th:errors="*{email}"
+           style="color:red">
+        </p>
+
+    </div>
+
+    <div>
+
+        <label>Level:</label>
+        <input type="text" th:field="*{level}"/>
+
+
+        <p th:if="${#fields.hasErrors('level')}"
+           th:errors="*{level}"
+           style="color:red">
+        </p>
+
+    </div>
+
+    <button type="submit">Skicka</button>
+
+</form>
+
+</body>
+</html>
